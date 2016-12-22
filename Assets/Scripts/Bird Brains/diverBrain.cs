@@ -7,6 +7,8 @@ public class diverBrain : birdBrain {
 
     public override void SetStats()
     {
+        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BirdSprites/diver");
+
         flapForce = 20;
         flapHorizontal = 2;
         horizontalSpeedMax = 5;

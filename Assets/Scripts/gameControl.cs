@@ -12,10 +12,10 @@ public class gameControl : MonoBehaviour {
         GameObject bird0 = Instantiate(Resources.Load<GameObject>("Bird"));
 
         bird0.transform.position = new Vector3(0, -2, 0);
-        AddRandomBird(bird0);
+        AddType(bird0, Mathf.FloorToInt(Random.Range(0, 4)));
 
         bird1.transform.position = new Vector3(0, 2, 0);
-        AddRandomBird(bird1);
+        AddType(bird1, Mathf.FloorToInt(Random.Range(0, 4)));
         bird1.GetComponent<birdBrain>().goingLeft = -1;
         bird1.transform.localScale = new Vector3(-1, 1, 1);
     }
@@ -25,9 +25,9 @@ public class gameControl : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
-    public void AddRandomBird(GameObject ObjectToAdd)
+    public void AddType(GameObject ObjectToAdd, int ID)
     {
-        switch (Mathf.FloorToInt(Random.Range(0,4)))
+        switch (ID)
         {
             case 0:
                 ObjectToAdd.AddComponent<flapperBrain>();

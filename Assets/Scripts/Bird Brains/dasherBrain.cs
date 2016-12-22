@@ -8,6 +8,8 @@ public class dasherBrain : birdBrain
 
     public override void SetStats()
     {
+        gameObject.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BirdSprites/dasher");
+
         flapForce = 12;
         flapHorizontal = 2;
         horizontalSpeedMax = 5;
